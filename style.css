@@ -1,0 +1,264 @@
+
+/* CONFIGURACION GENERAL */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 15px;
+    background-color: #173b2b;
+    border: 5px solid #ee650a;
+    font-family: Arial, sans-serif;
+    color: white;
+    min-height: 100vh;
+}
+
+/* ENCABEZADO */
+header {
+    min-height: 200px;
+    margin: 5px;
+    border: 3px solid #ee650a;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #10291f;
+}
+
+header img {
+    display: block;
+    max-width: 90%;
+    width: 330px;
+    height: auto;
+}
+
+/* BOTONES PRINCIPALES */
+.boton {
+    display: inline-block;
+    margin: 20px 10px;
+    padding: 15px 25px;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #ee650a;
+    color: white;
+    border: 2px solid #ff8b38;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.boton:hover {
+    background-color: #ff8730;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px #00000055;
+}
+
+/* FORMULARIOS DE REGISTRO */
+#Registrar {
+    margin: 15px 5px;
+    padding: 20px;
+    border: 2px solid #ee650a;
+    border-radius: 15px;
+    background-color: #10291f;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.CrearConductor,
+.CrearVehiculo {
+    display: none;
+}
+
+.CrearConductor.activo,
+.CrearVehiculo.activo {
+    display: grid;
+}
+
+form {
+    grid-template-columns: 160px minmax(0, 1fr);
+    align-items: center;
+    gap: 12px;
+    margin: 10px;
+    padding: 25px;
+    background-color: #e5e5e5;
+    color: #173b2b;
+    width: min(100%, 550px);
+    min-height: 250px;
+    border: 3px solid #ee650a;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+input,
+select {
+    width: 100%;
+    min-width: 0;
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 7px;
+    font-size: 16px;
+}
+
+input:focus,
+select:focus {
+    outline: 2px solid #ee650a;
+    border-color: #ee650a;
+}
+
+form button {
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin: 10px 0 0;
+    padding: 12px 25px;
+    width: auto;
+    background-color: #ee650a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #c95000;
+}
+
+/* MENU DE MOSTRAR Y FILTRAR */
+#Info {
+    margin: 20px 5px;
+    padding: 25px;
+    border: 2px solid #ee650a;
+    border-radius: 15px;
+    background-color: #10291f;
+}
+
+#menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+#menu button,
+#aplicarFiltroC,
+#aplicarFiltroV,
+#volver {
+    padding: 12px 20px;
+    background-color: #ee650a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#menu button:hover,
+#aplicarFiltroC:hover,
+#aplicarFiltroV:hover,
+#volver:hover {
+    background-color: #ff8730;
+    transform: translateY(-2px);
+}
+
+/* PANELES DE FILTRO */
+#filtroConductores,
+#filtroVehiculos {
+    margin: 20px auto;
+    padding: 25px;
+    max-width: 650px;
+    background-color: #e5e5e5;
+    color: #173b2b;
+    border: 3px solid #ee650a;
+    border-radius: 15px;
+}
+
+#filtroConductores label,
+#filtroVehiculos label {
+    display: block;
+    margin: 12px 0 6px;
+    font-weight: bold;
+}
+
+#filtroConductores button,
+#filtroVehiculos button {
+    margin-top: 18px;
+}
+
+/* RESULTADOS */
+#infoC {
+    margin: 20px auto 0;
+    padding: 20px;
+    max-width: 800px;
+    background-color: #e5e5e5;
+    color: #173b2b;
+    border: 2px solid #ee650a;
+    border-radius: 12px;
+}
+
+#infoC {
+    display: none;
+}
+
+#datos {
+    overflow-wrap: anywhere;
+    line-height: 1.8;
+}
+
+#datos h2 {
+    color: #c95000;
+    border-bottom: 2px solid #ee650a;
+    padding-bottom: 10px;
+}
+
+#datos hr {
+    border: none;
+    border-top: 1px solid #bbb;
+    margin: 15px 0;
+}
+
+#volver {
+    margin-top: 15px;
+}
+
+/* ADAPTACION A CELULARES */
+@media (max-width: 600px) {
+    body {
+        padding: 8px;
+    }
+
+    header {
+        min-height: 140px;
+    }
+
+    .boton {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+        font-size: 16px;
+    }
+
+    #Registrar,
+    #Info {
+        padding: 12px;
+    }
+
+    form {
+        grid-template-columns: 1fr;
+        padding: 18px;
+    }
+
+    #menu {
+        flex-direction: column;
+    }
+
+    #menu button {
+        width: 100%;
+    }
+}

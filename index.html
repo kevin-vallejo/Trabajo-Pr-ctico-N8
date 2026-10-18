@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Remiseria</title>
+</head>
+<body>
+    <header>
+        <img src="img/logo.png" alt="autito">
+    </header>
+    <button id="RegistrarC" class="boton">REGISTRAR CONDUCTOR</button>
+    <button id="RegistrarV" class="boton">REGISTRAR VEHÍCULO </button>
+
+    <main id="Registrar" >
+        <form class="CrearConductor" >
+            <label for="nombreC">Nombre</label>
+            <input type="text" id="nombreC">
+            <label for="edadC">Edad</label>
+            <input type="number" id="edadC">
+            <label for="tipo_carnet">Tipo de Carnet</label>
+            <select name="tipo_carnet" id="tipo_carnet">
+                <option value="A1">A1</option>
+                <option value="A2">A2</option>
+                <option value="A3">A3</option>
+            </select>
+            <label for="seguroC">Seguro</label>
+            <select name="seguroC" id="seguroC">
+                <option value="Si">SI</option>
+                <option value="No">NO</option>
+            </select>
+            <button type="button" id="EnviarC">Registrar</button>
+        </form>
+
+        <form class="CrearVehiculo">
+            <label for="marcaV">Marca</label>
+            <input type="text" id="marcaV">
+            <label for="modeloV">Modelo</label>
+            <input type="text" id="modeloV">
+            <label for="patenteV">Patente</label>
+            <input type="text" id="patenteV">
+            <label for="tipoV">Tipo de vehiculo</label>
+            <select name="tipoV" id="tipoV">
+                <option value="A1">A1</option>
+                <option value="A2">A2</option>
+                <option value="A3">A3</option>
+            </select>
+            <button type="button" id="EnviarV">Registrar</button>
+        </form>
+    </main>
+
+    <main id="Info" >
+        <div id="menu">
+            <button id="mostrarC">Mostrar conductores</button>
+            <button id="flitrarC">Filtrar conductores</button>
+            <button id="mostrarV">Mostrar vehiculos</button>
+            <button id="flitrarV">Filtrar vehiculos</button>
+        </div>
+        <div id="filtroConductores" style="display: none;">
+            <label for="carnetFiltro">Carnet:</label>
+
+            <select id="carnetFiltro">
+                <option value="Todos">Todos</option>
+                <option value="A1">A1</option>
+                <option value="A2">A2</option>
+                <option value="A3">A3</option>
+            </select>
+
+            <label for="seguroFiltro">Seguro:</label>
+
+            <select id="seguroFiltro">
+                <option value="Todos">Todos</option>
+                <option value="Si">Sí</option>
+                <option value="No">No</option>
+            </select>
+
+            <button id="aplicarFiltroC">Aplicar filtro</button>
+        </div>
+        
+        <div id="filtroVehiculos" style="display: none;">
+
+            <label for="marcaFiltro">Marca:</label>
+            <input type="text" id="marcaFiltro" placeholder="Escribí una marca">
+
+            <label for="tipoFiltro">Tipo de vehículo:</label>
+            <select id="tipoFiltro">
+                <option value="Todos">Todos</option>
+                <option value="A1">A1</option>
+                <option value="A2">A2</option>
+                <option value="A3">A3</option>
+            </select>
+
+            <button id="aplicarFiltroV">Aplicar filtro</button>
+
+        </div>
+
+        <div id="infoC">
+            <div id="datos">
+
+            </div>
+            <button id="volver"> <-- Volver  </button>
+        </div>
+    </main>
+</body>
+    <script src="java.js"></script>
+
+</html>
